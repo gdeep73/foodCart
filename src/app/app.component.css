@@ -1,0 +1,33 @@
+.side-bar
+{
+    padding-top:20px;
+    margin:auto;
+    height:500px;
+    width:60px;
+    background-color:#252525;
+    border-radius: 20px;
+    box-shadow: 0 19px 28px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.sidebar-icons
+{
+    
+    text-align: center;
+    width:60px;
+    color:white;
+    height:50px;
+    box-sizing: border-box;
+    border-left:4px solid #252525;
+    border-right:4px solid #252525;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.sidebar-icons i{
+    margin: auto;
+}
+.sidebar-icons:hover
+{    
+    border-left:4px solid lightblue;
+    box-sizing: border-box;
+}

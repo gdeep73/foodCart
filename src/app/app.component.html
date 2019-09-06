@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-1" style="padding-top:30px">
+      <div class="side-bar text-center">
+        <div class="sidebar-icons">
+          <i class="material-icons">child_care</i>
+        </div>
+        <div class="sidebar-icons">
+            <i class="material-icons" [routerLink]="['Contact']">home</i>
+          </div>
+          <div class="sidebar-icons" [routerLink]="['Home']">
+              <i class="material-icons">date_range</i>
+            </div>
+            <div class="sidebar-icons" [routerLink]="['Inventory']">
+                <i class="material-icons">dashboard</i>
+              </div>
+              <div class="sidebar-icons" [routerLink]="['Customer']">
+                  <i class="material-icons">data_usage</i>
+                </div>
+                <div class="sidebar-icons" [routerLink]="['Home']">
+                    <i class="material-icons">details</i>
+                  </div>
+                  <div class="sidebar-icons" [routerLink]="['InventoryManagement']">
+                      <i class="material-icons">devices</i>
+                    </div>
+      </div>
+    </div>
+    <div class="col-11" style="padding-top:30px">
+      <div class="container-fluid">
+        <app-topbar></app-topbar>
+      </div>
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+

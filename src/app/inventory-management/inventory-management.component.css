@@ -1,0 +1,6 @@
+.form-group{
+    margin:20px !important;
+}
+input:focus{
+    box-shadow: none;
+}

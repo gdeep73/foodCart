@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-9">
+        <div class="container-fluid">
+        <div class="row"  style="margin-top:20px">
+            <div class="col-12">
+              <table class="table shadow" style="table-layout: fixed">
+                <thead>
+                  <tr>
+                    <td >Serial No</td>
+                    <td >Food Item</td>
+                    <td>Price per Unit</td>
+                    <td>Add or Remove</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let food of dummyData">
+                    <td>{{food.foodId}}</td>
+                    <td>{{food.foodName}}</td>
+                    <td>{{food.foodPrice|currency}}</td>
+                    <td>
+                      
+                      <button class="btn btn-secondary btn-sm shadow" (click)="addToCart(food)">Add</button>&nbsp;
+                      <button class="btn btn-secondary btn-sm shadow" *ngIf="isInCart(food)" (click)="removeFromCart(food)">Remove</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>  
+              
+              
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="col-3">
+      <br>
+      <div class="h5 shadow" style="height: 50px;text-align: right;background-color: #252525;color:white;line-height: 50px;padding-right:20px;border-radius: 5px;">Total:{{totalAmount[0]|currency}}</div>
+      <table class="table table-hover shadow" style="table-layout: fixed">
+        <thead>
+          <tr>
+            <td>Item</td><td>Quantity</td><td>Price</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let food of Order" >
+            <td>{{food.name}}</td>
+            <td>{{food.Quantity}}</td>
+            <td>{{food.Amount|currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <button *ngIf="totalAmount[0]>0" class="btn btn-lg btn-dark">Checkout<i class="material-icons">arrow_right</i></button>
+    </div>
+  </div>
+  
+</div>

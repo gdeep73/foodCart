@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/bootstrap.css";
+@import "assets/icons.css";
+
+.customButton i{
+    margin-left:30px;
+}
+.customButton{
+    width:auto;
+    padding-left:20px;
+    padding-right:20px;
+    height:50px;
+    line-height: 20px;
+    border-radius: 25px;
+    display:flex;
+    align-items: center;
+    border:2px solid #e40000;
+    background-color: white;
+    transition: all 0.5s;
+
+}
+.customButton:hover{
+    background-color: #e40000;    
+    color:white;
+}
+.customButton span{ 
+    color:black;
+    transition: all 0.5s;
+}
+.customButton:hover span{     
+    padding-right:20px;
+    transition: all 0.5s;
+    color:white;
+}
+.fadeBox{
+    position: fixed;
+    top:0px;
+    right:0px;
+    bottom: 0px;
+    left:0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index:101;
+    transition: all 0.5s;
+}

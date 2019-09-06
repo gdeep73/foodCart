@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-9" style="padding-right:40px;" >
+                <div class="row">
+                        <div class="col-3"  *ngFor="let item of itemsArray">
+                            <div class="myCard">
+                                <div class="insideBanner text-center">
+                                    <br>
+                                   <h5> {{item.itemName}}</h5>
+                                </div>
+                                <div class="lowerBanner">
+                                    <span>{{item.pricePerUnit|currency:"&#8377;"}}</span>                                    
+                                    <i onselect="return false;" style="cursor: pointer;" class="float-right material-icons" (click)="addToCart(item)" >add_shopping_cart</i>
+                                    <i  style="cursor: pointer;" class="float-right material-icons" *ngIf="isInCart(item)" (click)="removeFromCart(item)" >remove_shopping_cart</i>
+                                    
+                                </div>                                 
+                            </div>
+                        </div>
+                </div>
+        </div>
+        <div class="col-3" >
+                
+                <div class="h5 shadow" style="height: 50px;text-align: right;background-color: #e40000;color:white;line-height: 50px;border-radius: 5px;padding-right:20px;margin-top:15px">Total:{{totalAmount[0]|currency:"&#8377;"}}</div>
+                
+                    <table class="table table-hover shadow" style="table-layout: fixed">
+                            <thead>
+                              <tr>
+                                <td>Item</td><td>Quantity</td><td>Price</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let food of Order" >
+                                <td>{{food.name}}</td>
+                                <td>{{food.Quantity}}</td>
+                                <td>{{food.Amount|currency:"&#8377;"}}</td>
+                              </tr>
+                            </tbody>
+                    </table>
+                    <br>
+      <button *ngIf="totalAmount[0]>0" (click)="confirmOrder()" class="customButton shadow"><span>Confirm Order</span><i class="material-icons">chevron_right</i></button>
+      <br>
+            </div>
+    </div>
+    
+    
+</div>
+<div *ngIf="show" class="alert"  [@fadeInOut]>{{message}}</div>
+<div class="fadeBox" *ngIf="OrderSaved"></div>
+<div class="confirmOrderBox h2 text-center" *ngIf="OrderSaved">Order has been successfully saved. Your Order No is {{Orderno}}
+  <br><br>
+<button class="customButton shadow h5" (click)="hideBox()" style="margin:auto">Dismiss</button>
+</div>

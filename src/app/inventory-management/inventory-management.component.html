@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <br>
+  <div class="row">
+      <div class="col-7 shadow" style="padding:20px;border:solid 0.5px lightgrey;border-radius: 10px">
+          <app-inventorylist></app-inventorylist>
+      </div>
+      <div class="col-1"></div>
+    <div class="col-4 shadow" style="padding:20px;border:solid 0.5px lightgrey;border-radius: 10px">
+      <div class="text-center h5">
+        Add/Edit New Item
+      </div>
+      <form class="" [formGroup]="this.customerService.InventoryForm" (ngSubmit)="onSubmit()">
+          <input type="hidden" formControlName="$itemkey">
+        <div class="form-group">
+          <input formControlName="itemName" placeholder="Item Name" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.itemName.errors}">
+          <div class="invalid-feedback" *ngIf="formControls.itemName.errors">
+              This field is Required
+            </div>
+        </div>
+        <div class="form-group">
+            <input formControlName="quantity" type="number" placeholder="Quantity" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.quantity.errors}">
+            <div class="invalid-feedback" *ngIf="formControls.quantity.errors">
+                This field is Required
+              </div>
+          </div>
+          <div class="form-group">
+              <input formControlName="category" placeholder="Category" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.category.errors}">
+              <div class="invalid-feedback" *ngIf="formControls.category.errors">
+                  This field is Required
+                </div>
+            </div>
+            <div class="form-group">
+                <input formControlName="pricePerUnit" placeholder="Price" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.pricePerUnit.errors}">
+                <div class="invalid-feedback" *ngIf="formControls.pricePerUnit.errors">
+                    This field is Required
+                  </div>
+              </div>
+              <div class="form-group">
+                  <input type="submit" value="Submit" class="btn btn-primary btn-sm">
+                  
+                </div>
+      </form>
+      <div class="alert alert-info fade-in" *ngIf="showSuccessMessage">
+          Submitted Successfully
+        </div>
+    </div>
+    
+  </div>
+  <div class="row">
+    
+  </div>
+</div>
